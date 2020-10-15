@@ -1,0 +1,35 @@
+identifier: 92748683-6c96-4985-a1fe-03df9e1656ae
+name: Breakfast
+hasMenuItem:
+  - identifier: ea1ac3c0-66e5-43a7-b6e7-dd7ce31c775e
+    name: "Chicken Fried Steak &amp; Eggs"
+    offers:
+      - price: 15.75
+  - identifier: f3c421e1-757e-405e-9625-918eb2b10822
+    name: Steak &amp; Eggs
+    offers:
+      - price: 15.75
+  - identifier: e1ed5315-ad81-4a2d-a4f8-9ecad7e00b55
+    name: Canadian Bacon &amp; Eggs
+    offers:
+      - price: 11.25
+  - identifier: 58e63e5e-feb0-491e-a4b9-8064f4099749
+    name: Hame &amp; Eggs
+    offers:
+      - price: 11.25
+  - identifier: c13b3a07-c52a-4adb-8ce6-fb740600362d
+    name: Sausage &amp; Eggs (Link or Country)
+    offers:
+      - price: 11.25
+  - identifier: 6c128091-edc3-40f4-b999-e4e2c8e1cdf6
+    name: Bacon &amp; Eggs
+    offers:
+      - price: 11.25
+  - identifier: c2e5649a-5d72-4220-82d0-6d920e663c9b
+    name: Eggs any Style
+    offers:
+      - price: 8.50
+  - identifier: 0165f5a8-9915-4505-ab87-43629c0dd162
+    name: Ground Beef &amp; Eggs
+    offers:
+      - price: 11.25

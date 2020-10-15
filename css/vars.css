@@ -1,3 +1,12 @@
 :root {
 	--map-width: 100%;
 }
+
+@media screen {
+	:root[data-theme], :root:not([data-theme]) {
+		--viewport-height: 667px;
+		--accent-color: #8a1930;
+		--button-primary-background: var(--accent-color);
+		--button-primary-active-background: #640e1f;
+	}
+}

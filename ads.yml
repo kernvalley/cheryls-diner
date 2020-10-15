@@ -1,4 +1,4 @@
-source: cheryls-diner
+source: jekyll-template
 medium: web
 campaign: kv-ads
 sidebar:
@@ -6,5 +6,4 @@ sidebar:
     label: Kern Valley Ads
     description: Advertise on sites throughout the Kern River Valley
     callToAction: Click here to get started!
-    image: https://ads.kernvalley.us/img/favicon.svg
-    layout: card
+    layout: text

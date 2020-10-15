@@ -7,29 +7,68 @@ tags:
 - jekyll
 - pwa
 - github template repo
-prerender:
-- href: /posts/2019/10/29/test/
 ---
-<section class="pagination">
-	<div class="grid grid-gallery">
-		{% for post in paginator.posts %}
-			<div class="article-preview card shadow-dark">
-				{% include post-preview.html post=post %}
+{% for section in site.data.menu %}
+	<section id="{{ section[1].identifier }}" class="menu-section" itemtype="https://schema.org/MenuSection" itemscope="">
+		<h2 itemprop="name" class="menu-section-name">{{ section[1].name }}</h2>
+		{% for item in section[1].hasMenuItem %}
+			<div class="menu-item" id="{{ item.identifier }}" itemprop="hasMenuItem" itemtype="https://schema.org/MenuItem" itemscope="">
+				<h3 class="menu-item-name" itemprop="name">{{ item.name }}</h3>
+				{% for spec in item.offers %}
+					<span class="menu-item-offer" itemprop="offers" itemtype="https://schema.org/Offer" itemscope="">
+						{% if spec.name %}<span class="menu-item-offer-name" itemprop="name">{{ spec.name }}</span>{% endif %}
+						<span class="menu-item-price" itemprop="price">${{ spec.price }}</span>
+						<meta itemprop="priceCurrency" content="{{ spec.priceCurrency | default: 'USD' }}" />
+					</span>
+				{% endfor %}
 			</div>
 		{% endfor %}
-	</div>
-	{% if paginator.previous_page or paginator.next_page %}
-		<footer class="paginate-nav">
-			{% if paginator.previous_page %}
-				<a href="{{ paginator.previous_page_path  }}" rel="prev" role="button" title="Previous page">
-					{% include icon.html icon='prev' %}
+	</section>
+{% endfor %}
+<section>
+<leaflet-map center="35.754615,-118.424722" zoom="18" loading="lazy" crossorigin="anonymous" zoomcontrol="" detectretina="">
+	<leaflet-marker itemtype="https://schema.org/LocalBusiness" id="bd20431c-1e2d-401d-8178-ad0d2fe3e71d" class="business-marker" longitude="-118.424722" latitude="35.754615" slot="markers" title="Cheryl's Diner" data-category="dining restaurant" itemscope="" open="">
+		<img src="/img/adwaita-icons/actions/mark-location.svg" slot="icon" loading="lazy" decoding="async" width="32" height="32">
+		<div slot="popup" part="popup">
+			<h4 itemprop="name">Cheryl's Diner</h4>
+			<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+				<meta itemprop="longitude" content="-118.424722">
+				<meta itemprop="latitude" content="35.754615">
+			</div>
+			<address itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+				<div itemprop="streetAddress">11030 Kernville Road</div>
+				<div>
+					<span itemprop="addressLocality">Kernville</span>,
+					<span itemprop="addressRegion">CA</span>
+				</div>
+				<meta itemprop="addressCountry" content="US">
+				<meta itemprop="postalCode" content="93238">
+			</address>
+			<div>
+				<a href="tel:+1-760-376-6131">
+					<svg class="icon current-color" width="16" height="16" role="img" aria-hidden="true">
+						<use xlink:href="/img/icons.svg#call-start"></use>
+					</svg>
+
+					<span itemprop="telephone">1-760-376-6131</span>
 				</a>
-			{% endif %}
-			{% if paginator.next_page %}
-				<a href="{{ paginator.next_page_path }}" role="button" rel="next" title="Next page">
-					{% include icon.html icon='next' %}
+			</div>
+			<div>
+				<a href="https://www.cherylsdiner.com" rel="noopener external">
+					<svg class="icon current-color" width="16" height="16" role="img" aria-hidden="true">
+<use xlink:href="/img/icons.svg#globe"></use>
+</svg>
+
+					<span itemprop="url">cherylsdiner.com</span>
 				</a>
-			{% endif %}
-		</footer>
-	{% endif %}
-</section>
+			</div>
+			<!-- geo:35.760197,-118.426793;crs=wgs84;u=0 -->
+			<a itemprop="url" href="https://www.google.com/maps/?q=35.754615,-118.424722" class="inline-block btn btn-primary" rel="noopener external" role="button">
+				<svg class="icon current-color" width="16" height="16" role="img" aria-hidden="true">
+					<use xlink:href="/img/icons.svg#map"></use>
+				</svg>
+				<span>View in Map App</span>
+			</a>
+		</div>
+	</leaflet-marker>
+</leaflet-map>
