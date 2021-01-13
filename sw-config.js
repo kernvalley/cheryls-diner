@@ -19,7 +19,6 @@ const config = {
 		'/img/icons.svg',
 
 		/* JS */
-		'https://cdn.polyfill.io/v3/polyfill.min.js',
 		'https://cdn.kernvalley.us/components/share-target.js',
 
 		/* `customElements`templates */
@@ -37,7 +36,7 @@ const config = {
 		'https://cdn.kernvalley.us/components/slide-show/slide-show.css',
 		'https://cdn.kernvalley.us/components/github/user.css',
 		'https://cdn.kernvalley.us/components/pwa/prompt.css',
-		'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css',
+		'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css',
 
 		/* Images & Icons */
 		'/img/apple-touch-icon.png',
